@@ -96,7 +96,7 @@ public class CustomerImportService {
         if (value == null) {
             return null;
         }
-        String trimmed = value.trim();
+        String trimmed = value.trim().replaceAll("\\s+", " ");
         return trimmed.isEmpty() ? null : trimmed;
     }
 }
