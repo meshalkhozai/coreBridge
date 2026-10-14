@@ -123,6 +123,3 @@ curl -s -X POST http://localhost:8080/api/customers/import
 
 These migrations run automatically on application startup when PostgreSQL is available.
 
-## Postman
-
-Import `postman/CoreBridge.postman_collection.json` into Postman. Set the `baseUrl` variable to your API URL.
