@@ -2,6 +2,7 @@
 target/
 *.class
 *.jar
+!gradle/wrapper/gradle-wrapper.jar
 *.war
 *.ear
 *.nar
@@ -31,6 +32,7 @@ _nbproject/
 # Environment & secrets
 .env
 .env.*
+!.env.example
 *.env.local
 application-local.yml
 application-local.properties

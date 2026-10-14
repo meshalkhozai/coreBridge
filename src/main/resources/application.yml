@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: corebridge-api
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/corebridge}
+    username: ${DB_USERNAME:corebridge}
+    password: ${DB_PASSWORD:corebridge}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: false
+    clean-disabled: true
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+server:
+  port: ${SERVER_PORT:8080}
+
+corebridge:
+  integration:
+    external-provider-base-url: ${EXTERNAL_PROVIDER_BASE_URL:http://localhost:8080}
+    import-path: /api/external/mock/customers
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.flywaydb: info

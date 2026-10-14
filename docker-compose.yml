@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: corebridge-postgres
+    environment:
+      POSTGRES_DB: corebridge
+      POSTGRES_USER: corebridge
+      POSTGRES_PASSWORD: corebridge
+    ports:
+      - "5432:5432"
+    volumes:
+      - corebridge_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U corebridge -d corebridge"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  corebridge_pg_data:

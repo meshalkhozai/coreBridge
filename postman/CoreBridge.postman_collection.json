@@ -1,0 +1,99 @@
+{
+  "info": {
+    "name": "CoreBridge API",
+    "description": "Fictional Customer Data Integration REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "Customers",
+      "item": [
+        {
+          "name": "List Customers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/customers"
+          }
+        },
+        {
+          "name": "Get Customer",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/customers/1"
+          }
+        },
+        {
+          "name": "Create Customer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerType\": \"INDIVIDUAL\",\n  \"fullName\": \"Alice Carter\",\n  \"email\": \"alice@example.com\",\n  \"phone\": \"+1-555-0101\",\n  \"externalId\": \"ext-001\"\n}"
+            },
+            "url": "{{baseUrl}}/api/customers"
+          }
+        },
+        {
+          "name": "Update Customer",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerType\": \"INDIVIDUAL\",\n  \"fullName\": \"Alice Carter Updated\",\n  \"email\": \"alice@example.com\"\n}"
+            },
+            "url": "{{baseUrl}}/api/customers/1"
+          }
+        },
+        {
+          "name": "Delete Customer",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/customers/1"
+          }
+        },
+        {
+          "name": "Import Customers",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": "{{baseUrl}}/api/customers/import"
+          }
+        }
+      ]
+    },
+    {
+      "name": "External Provider",
+      "item": [
+        {
+          "name": "List External Customers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/external/mock/customers"
+          }
+        }
+      ]
+    }
+  ]
+}
