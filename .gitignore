@@ -1,0 +1,51 @@
+# Java / Spring Boot
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.log
+*.tmp
+*.swp
+
+# Maven (wrapper assets may be committed, but local builds are ignored)
+*.iml
+
+# Gradle
+.gradle/
+build/
+out/
+
+# IDE files (IntelliJ IDEA)
+.idea/
+*.iws
+*.ipr
+.idea_modules/
+_nbproject/
+.vscode/
+.classpath
+.project
+.settings/
+
+# Environment & secrets
+.env
+.env.*
+*.env.local
+application-local.yml
+application-local.properties
+application-secret.properties
+application-secret.yml
+*.pem
+*.key
+*.crt
+*.p12
+*.jks
+*.keystore
+secrets/
+config/secrets.yml
+config/secrets.properties
+
+# OS files
+.DS_Store
+Thumbs.db"
